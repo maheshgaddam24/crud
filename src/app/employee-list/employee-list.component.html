@@ -1,9 +1,10 @@
 <div class="container custom-container-2">
-
   <!-- Show it when there is no employee -->
   <div class="no-data text-center" *ngIf="Employee.length == 0">
     <p>There is no employee added yet!</p>
-    <button class="btn btn-outline-primary" routerLink="/create-employee">Add Empoyee</button>
+    <button class="btn btn-outline-primary" routerLink="/create-employee">
+      Add Empoyee
+    </button>
   </div>
 
   <!-- Employees list table, it hides when there is no employee -->
@@ -23,19 +24,20 @@
         </thead>
         <tbody>
           <tr *ngFor="let employee of Employee">
-            <td>{{employee.id}}</td>
-            <td>{{employee.name}}</td>
-            <td>{{employee.email}}</td>
-            <td>{{employee.phone}}</td>
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.phone }}</td>
             <td>
-              <span class="edit" routerLink="/employee-edit/{{employee.id}}">Edit</span>
-              <span class="delete" (click)="deleteEmployee(employee.id)">Delete</span>
+              <span class="edit" routerLink="/employee-edit/{{ employee.id }}"
+                >Edit</span>
+              <span class="delete" (click)="deleteEmployee(employee.id)"
+                >Delete</span
+              >
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-
   </div>
-
 </div>

@@ -1,6 +1,6 @@
-export class Employee {
-   id: number;
-   name: string;
-   email: string;
-   phone: number;
+export interface Employee {
+  id: string;
+  name: string;
+  email: string;
+  phone: number;
 }
