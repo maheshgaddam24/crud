@@ -15,7 +15,6 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th scope="col">User Id</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
@@ -24,20 +23,22 @@
         </thead>
         <tbody>
           <tr *ngFor="let employee of Employee">
-            <td>{{ employee.id }}</td>
             <td>{{ employee.name }}</td>
             <td>{{ employee.email }}</td>
             <td>{{ employee.phone }}</td>
             <td>
-              <span class="edit" routerLink="/employee-edit/{{ employee.id }}"
+              <span class="edit" routerLink="/employee-edit/{{ employee._id }}"
                 >Edit</span>
-              <span class="delete" (click)="deleteEmployee(employee.id)"
+              <span class="delete" (click)="deleteEmployee(employee._id)"
                 >Delete</span
               >
             </td>
           </tr>
         </tbody>
       </table>
+      <button class="btn btn-outline-primary" routerLink="/create-employee">
+        Add Empoyee
+      </button>
     </div>
   </div>
 </div>

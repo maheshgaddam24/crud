@@ -9,7 +9,7 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class RestApiService {
   // Define API
-  apiURL = 'http://localhost:3000';
+  apiURL = 'https://crudcrud.com/api/85edc4747a66497f94a92a5a25ff01fa/employees';
 
   constructor(private http: HttpClient) {}
 
@@ -27,14 +27,14 @@ export class RestApiService {
   // HttpClient API get() method => Fetch employees list
   getEmployees(): Observable<Employee> {
     return this.http
-      .get<Employee>(this.apiURL + '/employees')
+      .get<Employee>(this.apiURL )
       .pipe(retry(1), catchError(this.handleError));
   }
 
   // HttpClient API get() method => Fetch employee
-  getEmployee(id: any): Observable<Employee> {
+  getEmployee(_id: any): Observable<Employee> {
     return this.http
-      .get<Employee>(this.apiURL + '/employees/' + id)
+      .get<Employee>(this.apiURL + '/' + _id)
       .pipe(retry(1), catchError(this.handleError));
   }
 
@@ -42,7 +42,7 @@ export class RestApiService {
   createEmployee(employee: any): Observable<Employee> {
     return this.http
       .post<Employee>(
-        this.apiURL + '/employees',
+        this.apiURL ,
         JSON.stringify(employee),
         this.httpOptions
       )
@@ -50,10 +50,10 @@ export class RestApiService {
   }
 
   // HttpClient API put() method => Update employee
-  updateEmployee(id: any, employee: any): Observable<Employee> {
+  updateEmployee(_id: any, employee: any): Observable<Employee> {
     return this.http
       .put<Employee>(
-        this.apiURL + '/employees/' + id,
+        this.apiURL + '/' + _id,
         JSON.stringify(employee),
         this.httpOptions
       )
@@ -61,9 +61,9 @@ export class RestApiService {
   }
 
   // HttpClient API delete() method => Delete employee
-  deleteEmployee(id: any) {
+  deleteEmployee(_id: any) {
     return this.http
-      .delete<Employee>(this.apiURL + '/employees/' + id, this.httpOptions)
+      .delete<Employee>(this.apiURL + '/' + _id, this.httpOptions)
       .pipe(retry(1), catchError(this.handleError));
   }
 

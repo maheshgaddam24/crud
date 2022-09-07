@@ -9,7 +9,7 @@ import { RestApiService } from '../shared/rest-api.service';
 })
 
 export class EmployeeCreateComponent implements OnInit {
-  @Input() employeeDetails = { name: '', email: '', phone: 0 };
+  @Input() employeeDetails = {name: '', email: '', phone: 0 };
 
   constructor(public restApi: RestApiService, public router: Router) {}
 
@@ -19,5 +19,9 @@ export class EmployeeCreateComponent implements OnInit {
     this.restApi.createEmployee(this.employeeDetails).subscribe((data: {}) => {
       this.router.navigate(['/employees-list']);
     });
+  }
+
+  disEmployee(dataEmployee: any) {
+      this.router.navigate(['/employees-list']);
   }
 }

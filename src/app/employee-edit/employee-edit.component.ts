@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./employee-edit.component.scss'],
 })
 export class EmployeeEditComponent implements OnInit {
-  id = this.actRoute.snapshot.params['id'];
+  id = this.actRoute.snapshot.params["id"];
   employeeData: any = {};
 
   constructor(
