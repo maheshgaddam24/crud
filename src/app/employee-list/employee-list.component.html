@@ -23,9 +23,9 @@
         </thead>
         <tbody>
           <tr *ngFor="let employee of Employee">
-            <td>{{ employee.name }}</td>
-            <td>{{ employee.email }}</td>
-            <td>{{ employee.phone }}</td>
+            <td class="name">{{ employee.name }}</td>
+            <td class="email">{{ employee.email }}</td>
+            <td class="phone">{{ employee.phone }}</td>
             <td>
               <span class="edit" routerLink="/employee-edit/{{ employee._id }}"
                 >Edit</span>
